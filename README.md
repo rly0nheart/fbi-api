@@ -17,7 +17,7 @@ $ pip install -r requirements.txt
 | Option       | Metavar | Usage |
 | -------------|:---------:|:---------:|
 | <code>--dump</code>| *path/to/file* |  *dump output to a specified file*  |
-| <code>--wanted</code>| |  *return a dossiers of the current wanted persons*  |
+| <code>--wanted</code>| |  *return dossiers of the current wanted persons*  |
 | <code>--wanted-person</code>| *ID#* |  *return a dossier of a wanted person*  |
 | <code>--download</code>| |  *download a person's casefile (beta) (only works with --wanted-person)*  |
 | <code>--verbose</code>| | *enable verbosity*  |
