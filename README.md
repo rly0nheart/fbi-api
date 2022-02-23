@@ -1,5 +1,7 @@
 An open-source tool that gets information on the FBI Wanted program, this includes lists of wanted criminals, unidentified victims, etc. 
 
+![fbi](https://user-images.githubusercontent.com/74001397/155360556-d9233106-10e9-41e0-85cd-2ca4b77b8edc.gif)
+
 # Installation
 ```
 $ git clone https://github.com/rly0nheart/fbi-mostwanted.git
