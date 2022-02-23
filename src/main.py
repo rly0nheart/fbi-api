@@ -9,9 +9,9 @@ from lib.colors import red,white,green,reset
 class Wanted:
     def __init__(self,args):
         if args.wanted:
-        	self.api = 'https://api.fbi.gov/@wanted'
+        	self.api = f'https://api.fbi.gov/@wanted'
         else:
-        	self.api = 'https://api.fbi.gov/@wanted-person/{args.wantedperson}'
+        	self.api = f'https://api.fbi.gov/@wanted-person/{args.wanted_person}'
         	
         self.attrs = ['uid','ncic','sex','eyes_raw','hair_raw','weight','height_min','height_max','build','race_raw','nationality','complexion',
                              'scars_and_marks','languages','age_range','place_of_birth','dates_of_birth_used','aliases','legat_names','occupations','locations',
@@ -110,7 +110,7 @@ class Wanted:
     # Download casefile of a wanted person                              
     def download(self,response):
         uri = requests.get(response['files'][0]['url'], stream=True)
-        with open(response['title']+'.pd', 'wb') as file:
+        with open(response['title']+'.pdf', 'wb') as file:
             # Getting at least 1MB chunk size (if possible) for the file per iteration
             # And saving it to the opened file
             for chunk in tqdm(uri.iter_content(chunk_size=1024),desc=f"{white}[{green}~{white}] Downloading {response['title']}.pdf{reset}"):
@@ -123,7 +123,7 @@ class Wanted:
             
     # Dump output to a specified file                
     def dump(self,response):
-        if args.wantedperson:
+        if args.wanted_person:
             with open(args.dump, 'w') as file:
                 file.write(f"{response['title']}\n")
                 for attr in self.attrs:
@@ -160,9 +160,9 @@ start_time = datetime.now()
 # Parsing command line arguments                                                                        
 parser = argparse.ArgumentParser(description=f'{white}FBI Wanted Persons Program CLI{reset}',epilog=f'{white}Gets lists and dossiers of top wanted persons and unidentified victims from the FBI Wanted Persons Program. Developed by {green}Richard Mwewa{white} | https://about.me/{green}rly0nheart{reset}')
 parser.add_argument('--dump',help='dump output to a file',metavar='<path/to/file>')
-parser.add_argument('--wanted',help='return dossiers of the current wanted persons',action='store_true')
-parser.add_argument('--wanted-person',help='return a dossier of a wanted person',dest='wanted_person',metavar='<ID#>')
-parser.add_argument('--download',help='download persons\' casefile (beta) (only works with --wanted-person)',action='store_true')
+parser.add_argument('--wanted',help='return a list of the top wanted persons\' dossiers',action='store_true')
+parser.add_argument('--wanted-person',help='return a dossier of a single wanted person; provide person\'s ID#',dest='wanted_person',metavar='<ID#>')
+parser.add_argument('--download',help='download persons\' casefile (beta)',action='store_true')
 parser.add_argument('--verbose',help='enable verbosity',action='store_true')
 parser.add_argument('--version',version='v1.0.0-caesar',action='version')
 parser.add_argument('--author',help='show author\'s information and exit',action='store_true')
