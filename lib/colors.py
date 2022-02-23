@@ -7,10 +7,11 @@ if platf.lower().startswith(("os", "win", "darwin","ios")):
     colors = False
 
 if not colors:
-	green = red = white = reset = ""
+	green = red = blue = white = reset = ""
 
 else:                                                 
     white = "\033[97m"
     red = "\033[91m"
+    blue = "\033[34m"
     green = "\033[92m"
     reset = "\033[0m"
