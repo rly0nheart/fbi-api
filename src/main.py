@@ -9,7 +9,7 @@ from lib.colors import red,white,green,reset
 class Wanted:
     def __init__(self,args):
         if args.wanted:
-        	self.api = f'https://api.fbi.gov/@wanted'
+        	self.api = f'https://api.fbi.gov/@wanted?pageSize=20&page=1&sort_on=modified&sort_order=desc'
         else:
         	self.api = f'https://api.fbi.gov/@wanted-person/{args.wanted_person}'
         	
