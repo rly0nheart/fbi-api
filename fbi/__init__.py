@@ -1,5 +1,5 @@
 from typing import Union, Literal
-from fbi.connection import get_api_response
+from fbi.connection import __get_api_response
 
 
 def wanted(person_classification: Union[Literal['Main'], Literal['Accomplice'], Literal['Victim']] = None,
@@ -22,7 +22,7 @@ def wanted(person_classification: Union[Literal['Main'], Literal['Accomplice'], 
     else:
         sort_order = f"&sort_order={sort_order}"
 
-    response = get_api_response(f"https://api.fbi.gov/@wanted?pageSize={page_size}&page={page}{person_classification}")
+    response = __get_api_response(f"https://api.fbi.gov/@wanted?pageSize={page_size}&page={page}{person_classification}")
     return response['items']
 
 
@@ -32,7 +32,7 @@ def wanted_person(person_id: str) -> dict:
     :param person_id: id of wanted person
     :return: a dictionary of person's information
     """
-    return get_api_response(f"https://api.fbi.gov/@wanted-person/{person_id}")
+    return __get_api_response(f"https://api.fbi.gov/@wanted-person/{person_id}")
 
 
 def art_crimes(page_size: int = 20, page: int = 1, sort_order: Union[Literal['asc'], Literal['desc'], None] = None,
@@ -55,7 +55,7 @@ def art_crimes(page_size: int = 20, page: int = 1, sort_order: Union[Literal['as
     else:
         sort_order = f"&sort_order={sort_order}"
 
-    response = get_api_response(f"https://api.fbi.gov/@artcrimes?pageSize={page_size}&page={page}"
+    response = __get_api_response(f"https://api.fbi.gov/@artcrimes?pageSize={page_size}&page={page}"
                                 f"{sort_order}{reference_number}")
     return response['items']
 
@@ -66,4 +66,4 @@ def art_crime(crime_id: str) -> dict:
     :param crime_id: id of an art crime
     :return: dictionary of an art crime's information
     """
-    return get_api_response(f"https://api.fbi.gov/@artcrimes/{crime_id}")
+    return __get_api_response(f"https://api.fbi.gov/@artcrimes/{crime_id}")
