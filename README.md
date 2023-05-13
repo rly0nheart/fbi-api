@@ -1,34 +1,17 @@
-An open-source tool that gets information on the FBI Wanted program, this includes lists of wanted criminals, unidentified victims, etc. 
+A Python wrapper around the FBI API (unofficial)
 
-![fbi](https://user-images.githubusercontent.com/74001397/155360556-d9233106-10e9-41e0-85cd-2ca4b77b8edc.gif)
+Assists in retrieving information from the FBI Wanted program, this includes lists of wanted criminals, accomplices of a crime and or victims.
+# Documentation
+[Refer to the Wiki](https://github.com/rly0nheart/fbi-api/wiki) for installation instructions, code examples, in addition to all other documentation.
 
-# Installation
-```
-$ git clone https://github.com/rly0nheart/fbi-mostwanted.git
-```
+# Note
+This project is in no way affiliated with the FBI lol. I only use their API.
 
-```
-$ cd fbi-mostwanted
-```
-
-```
-$ pip install -r requirements.txt
-```
-
-# Optional Arguments
-| Option       | Metavar | Usage |
-| -------------|:---------:|:---------:|
-| <code>--dump</code>| *path/to/file* |  *dump output to a specified file*  |
-| <code>--wanted</code>| |  *return dossiers of the current wanted persons*  |
-| <code>--wanted-person</code>| *ID#* |  *return a dossier of a wanted person*  |
-| <code>--download</code>| |  *download a person's casefile (beta) (only works with --wanted-person)*  |
-| <code>--verbose</code>| | *enable verbosity*  |
-| <code>--version</code>| |  *show program's version number and exit*  |
-| <code>--author</code>| |  *show author's information and exit*  |
-| <code>--licence/--license</code>| |  *show program's licen[cs]e and exit*  |
-
-# LICENSE
+# License
 ![license](https://user-images.githubusercontent.com/74001397/137917929-2f2cdb0c-4d1d-4e4b-9f0d-e01589e027b5.png)
+# Support
+If you like this project and would like to show support, you can Buy Me A Coffee using the button below
 
-# About me
-* [About.me](https://about.me/rly0nheart)
+<a href="https://www.buymeacoffee.com/189381184" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee" height="41" width="174"></a>
+
+Your support will be much appreciated!😊
