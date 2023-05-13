@@ -2,7 +2,7 @@ import requests
 import re
 import json
 
-def get_api_response(url: str) -> dict:
+def __get_api_response(url: str) -> dict:
     """
     Sends a GET request to the specified URL and returns the response as a dictionary.
 
